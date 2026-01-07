@@ -1,0 +1,155 @@
+.services-page {
+    background: var(--color-bg-light);
+    min-height: 100vh;
+    padding-bottom: 6rem;
+}
+
+.mad-title {
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-black);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-lime);
+    position: relative;
+    display: inline-block;
+}
+
+.stroke-text::after {
+    content: "Mad";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--color-purple);
+    -webkit-text-stroke: 0;
+    z-index: -1;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 6rem;
+    font-weight: 500;
+}
+
+.services-list-new {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.service-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.service-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-visual img {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+.blob-bg {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: blobPulse 5s infinite alternate;
+}
+
+@keyframes blobPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.service-info {
+    flex: 1;
+    position: relative;
+}
+
+.service-number {
+    font-size: 8rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: -6rem;
+    left: -2rem;
+    z-index: -1;
+    line-height: 1;
+}
+
+.service-info h2 {
+    font-size: 3rem;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.service-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.service-info p {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 900px) {
+    .mad-title {
+        font-size: 4rem;
+    }
+
+    .service-row {
+        flex-direction: column !important;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .service-number {
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: 5rem;
+        margin-bottom: 1rem;
+    }
+}

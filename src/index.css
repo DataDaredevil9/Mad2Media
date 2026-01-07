@@ -1,0 +1,154 @@
+:root {
+  --color-purple: #7F00FF;
+  --color-purple-dark: #4b0082;
+  --color-lime: #ccff00;
+  --color-black: #121212;
+  --color-charcoal: #1a1a1a;
+  --color-coral: #ff6f61;
+
+  /* Light Theme Variables */
+  --color-bg-light: #FDF9F3;
+  /* Warm off-white/cream */
+  --color-text-dark: #1A1A1A;
+  --color-card-light: #FFFFFF;
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-purple);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lime);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.text-lime {
+  color: #8cb300;
+  /* Darker Lime for Light Mode visibility */
+}
+
+.text-purple {
+  color: var(--color-purple);
+}
+
+.text-coral {
+  color: var(--color-coral);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-purple), #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}

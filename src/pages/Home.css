@@ -1,0 +1,228 @@
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-offwhite);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.experiments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    perspective: 1000px;
+    /* Enable 3D depth */
+}
+
+.experiment-card {
+    transform-style: preserve-3d;
+}
+
+.tagline {
+    color: var(--color-black) !important;
+}
+
+.desc {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.why-title {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    color: var(--color-black);
+    /* Fixed visibility on light bg */
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@keyframes goldenBlink {
+    0% {
+        border-color: rgba(255, 215, 0, 0.3);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
+    }
+
+    50% {
+        border-color: rgba(255, 215, 0, 1);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    100% {
+        border-color: rgba(255, 215, 0, 0.3);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
+    }
+}
+
+.reason-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    /* Subtle default border */
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* Animation removed from here */
+}
+
+.reason-item:hover {
+    transform: scale(1.02) rotate(-1deg);
+    background: var(--color-purple);
+    /* border-color and box-shadow handled by animation */
+    animation: goldenBlink 1.5s infinite ease-in-out;
+}
+
+.reason-item:hover .reason-text {
+    color: white;
+    transform: translateX(20px);
+}
+
+.reason-item:hover .reason-number {
+    color: var(--color-lime);
+    transform: scale(1.2) rotate(15deg);
+}
+
+.reason-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-purple);
+    opacity: 0.2;
+    transition: all 0.4s ease;
+}
+
+.reason-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-black);
+    transition: all 0.4s ease;
+}
+
+.work-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 2rem 0;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.work-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.work-card-home {
+    min-width: 350px;
+    height: 350px;
+    background: var(--color-charcoal);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.work-card-home:hover {
+    transform: scale(1.02);
+    border-color: var(--color-coral);
+}
+
+.work-card-home h3 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+}
+
+.work-card-home.with-image {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), var(--work-image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.4s ease;
+}
+
+.work-card-home.with-image:hover {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), var(--work-image);
+    border-color: var(--color-lime);
+    transform: scale(1.02);
+}
+
+.work-card-home:hover h3 {
+    opacity: 0.1;
+    /* Text fades out on hover to show image */
+}
+
+.section-title {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.scrolling-tagline {
+    font-size: 15rem;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    margin: 5rem 0;
+    overflow: hidden;
+}
+
+.scrolling-tagline span {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .scrolling-tagline {
+        font-size: 6rem;
+    }
+
+    .why-title {
+        font-size: 3.5rem;
+    }
+
+    .reason-text {
+        font-size: 1.5rem;
+    }
+
+    .work-card-home {
+        min-width: 280px;
+        height: 350px;
+    }
+}

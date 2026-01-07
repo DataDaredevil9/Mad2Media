@@ -1,0 +1,43 @@
+.experiment-card {
+    background: white;
+    /* Ensure white background for light theme consistency */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* changed from space-between to avoid spacing issues */
+    gap: 1.5rem;
+    /* Add gap for consistent spacing which replaces space-between */
+    height: 100%;
+    /* Fill grid cell */
+    min-height: 450px;
+    /* Increased min-height to fit new images */
+    cursor: pointer;
+    position: relative;
+    /* overflow: hidden;  <-- REMOVED to prevent clipping */
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    /* Softer look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-offwhite);
+    margin-bottom: 0.8rem;
+}
+
+.desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
